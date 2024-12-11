@@ -72,6 +72,7 @@
             cursor: pointer;
             border-bottom: 1px solid #eee;
         }
+      
 
         .suggestion:hover {
             background-color: #f8f9fa;
@@ -103,6 +104,58 @@
             padding: 10px;
             text-align: center;
         }
+
+        /* Add these new styles here */
+        .not-registered-banner {
+            background-color: #ffebee;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px;
+            border: 2px solid #dc3545;
+        }
+
+        .banner-text {
+            color: #dc3545;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .x-sign {
+            font-size: 48px;
+            color: #dc3545;
+            display: block;
+            margin-bottom: 10px;
+        }
+        @media screen and (max-width: 600px) {
+            .search-container {
+                flex-direction: column;
+                width: 90%;
+                gap: 15px;
+            }
+
+            #search-bar {
+                width: 100%;
+            }
+
+            .result-item {
+                margin: 10px 5px;
+            }
+
+            #suggestions, #results {
+                width: 90%;
+            }
+
+            .result-item strong {
+                display: block;
+                margin-bottom: 5px;
+            }
+        }
+
+        
+
+        
     </style>
 </head>
 <body>
@@ -165,9 +218,12 @@
                     .filter(row => row[1] && row[1].toLowerCase().includes(query))
                     .slice(0, 10);
 
-                if (matches.length > 0) {
+                    if (matches.length > 0) {
                     suggestions.innerHTML = matches
-                        .map(row => `<div class="suggestion" onclick="document.getElementById('search-bar').value='${row[1]}'">${row[1]}</div>`)
+                        .map(row => `<div class="suggestion" onclick="(function(){
+                            document.getElementById('search-bar').value='${row[1]}';
+                            document.getElementById('search-button').click();
+                        })()">${row[1]}</div>`)
                         .join('');
                 }
             });
@@ -204,7 +260,11 @@
                             `).join('')}
                         </div>`;
                 } else {
-                    results.innerHTML = '<div class="error">No results found</div>';
+                    results.innerHTML = `
+                        <div class="not-registered-banner">
+                            <span class="x-sign">✕</span>
+                            <div class="banner-text">NBFC NOT REGISTERED WITH RBI</div>
+                        </div>`;
                 }
             }
 
