@@ -173,12 +173,9 @@
             });
 
             // Search function
-
-                function performSearch() {
+            function performSearch() {
                 const query = searchBar.value.toLowerCase().trim();
                 suggestions.innerHTML = '';
-
-
                 
                 if (!query) {
                     results.innerHTML = '<div class="error">Please enter a search term</div>';
@@ -200,8 +197,8 @@
                             <h3>Results:</h3>
                             ${matches.map(row => `
                                 <div class="result-item">
-                                    ${csvData.headers.map((header, index) => `
-                                        <div><strong>${header}:</strong> ${row[index] || 'N/A'}</div>
+                                                                        ${csvData.headers.slice(1).map((header, index) => `
+                                        <div><strong>${header}:</strong> ${row[index + 1] || 'N/A'}</div>
                                     `).join('')}
                                 </div>
                             `).join('')}
