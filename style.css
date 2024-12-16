@@ -211,4 +211,29 @@ header {
             text-decoration: underline;
         }
 
+        .banner {
+            background-color: #ffebee; /* Light red background */
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px 0;
+            border: 2px solid #dc3545; /* Red border */
+        }
+        
+        .banner-text {
+            color: #dc3545; /* Red text */
+            font-size: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 5px; /* Add some space between the X and the text */
+        }
+        
+        .x-sign {
+            font-size: 24px; /* Size of the X mark */
+            color: #dc3545; /* Red color for the X mark */
+            cursor: pointer; /* Change cursor to pointer */
+            display: block; /* Make it a block element to stack above the text */
+            margin-bottom: 5px; /* Space between the X and the text */
+            font-weight: bold; /* Make the X bold */
+        }
         
