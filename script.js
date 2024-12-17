@@ -76,10 +76,10 @@ searchBar.addEventListener('input', () => {
     
         // Search in both CSV and JSON data
         const csvMatches = csvData.rows
-            .filter(row => row[1] && row[1].toLowerCase().includes(query));
+            .filter(row => row[1] && row[1].toLowerCase() === query);
         
         const jsonMatches = jsonData
-            .filter(item => item.__EMPTY_1 && item.__EMPTY_1.toLowerCase().includes(query));
+            .filter(item => item.__EMPTY_1 && item.__EMPTY_1.toLowerCase() === query);
     
         // Show or hide the banner based on JSON matches
         const banner = document.getElementById('banner');
@@ -92,7 +92,7 @@ searchBar.addEventListener('input', () => {
         if (csvMatches.length > 0 || jsonMatches.length > 0) {
             results.innerHTML = `
                 <div style="padding: 12px;">
-                    <h3>Results:</h3>
+                    <h3></h3>
                     ${csvMatches.map(row => `
                         <div class="result-item">
                             ${csvData.headers.slice(1).map((header, index) => `
