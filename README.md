@@ -16,16 +16,7 @@ The NBFC Search Tool is a web application designed to help users search for Non-
 - JavaScript
 - Fetch API for data loading
 
-## Installation
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd nbfc-search-tool
-   ```
-3. Live: [https://nbfcsearch.netlify.app](https://nbfcsearch.netlify.app)
+## Live: [https://nbfcsearch.netlify.app](https://nbfcsearch.netlify.app)
 
 ## Usage
 1. Enter the name of the NBFC you want to search for in the search bar.
