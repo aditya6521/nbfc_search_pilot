@@ -1,239 +1,223 @@
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding-top: 80px;  
+    padding-bottom: 60px;
+    background: linear-gradient(to bottom right, rgba(30, 32, 34, 1), rgba(23, 26, 29, 1)); /* Dark gradient background */
+}
 
+/* Header Styles */
 header {
-            background-color: #f5f5f5;  /* Match website background */
-            padding: 15px 0;
-            text-align: center;
-            width: 100%;
-            margin-bottom: 20px;
-            position: fixed;  /* Fix header to top */
-            top: 0;
-            left: 0;
-            z-index: 1000;  /* Ensure header stays on top */
-        }
+    background: linear-gradient(to bottom right, rgba(30, 32, 34, 1), rgba(23, 26, 29, 1)); /* Same gradient for header */
+    padding: 15px 0;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    position: fixed;  
+    top: 0;
+    left: 0;
+    z-index: 1000;  
+}
 
+.header-content h1 {
+    margin: 0;
+    color: white;
+    font-size: 2.5em;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
 
+/* Search Container Styles */
+.search-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    background: linear-gradient(to bottom right, rgba(30, 32, 34, 1), rgba(23, 26, 29, 1)); /* Same background as header */
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid linear-gradient(to right, #4a90e2, #ff6f61); /* Button color for border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-        .header-content h1 {
-            margin: 0;
-            color: #007bff;
-            font-size: 2em;
-            font-weight: 500;
-            letter-spacing: 2px;
-        }
+/* Input and Button Styles */
+#search-bar {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: white; /* White text color */
+    background: transparent; /* Transparent background */
+}
 
-        footer {
-            background-color: #f8f9fa;
-            color: #6c757d;
-            padding: 15px 0;
-            text-align: center;
-            width: 100%;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            border-top: 1px solid #dee2e6;
-        }
+#search-bar:focus {
+    border: 1px solid #4a90e2; /* Focus border color */
+    outline: none; /* Remove outline */
+}
 
-        .footer-content p {
-            margin: 0;
-            font-size: 0.9em;
-        }
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background: linear-gradient(to right, #4a90e2, #ff6f61); /* Gradient button */
+    color: white; /* White text color */
+    font-weight: bold; /* Bold text */
+    transition: background 0.3s;
+}
 
-        /* Update body padding to account for footer */
-        body {
-            padding-bottom: 60px;
-        }
+button:hover {
+    background: linear-gradient(to right, #0056b3, #ff4c4c); /* Darker gradient on hover */
+}
 
-        /* Add mobile responsiveness */
-        @media screen and (max-width: 600px) {
-            .header-content h1 {
-                font-size: 1.5em;
-            }
-        }
+/* Suggestions and Results Styles */
+#suggestions, #results {
+    width: 80%;
+    max-width: 800px;
+    margin-top: 10px;
+    background: linear-gradient(to bottom right, rgba(30, 32, 34, 1), rgba(23, 26, 29, 1)); /* Same background as header */
+    border-radius: 8px;
+    border: 2px solid linear-gradient(to right, #4a90e2, #ff6f61); /* Button color for border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white; /* White text color */
+    font-weight: bold; /* Bold text */
+}
 
-        
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            min-height: 100vh;
-            margin: 0;
-            padding-top: 80px;  /* Increased padding-top */
-            padding-bottom: 60px;
-            background-color: #f5f5f5;
-        }
+.suggestion {
+    padding: 12px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Light border for suggestions */
+}
 
-        .search-container {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+.suggestion:hover {
+    background: rgba(74, 144, 226, 0.1); /* Light blue on hover */
+}
 
-        #search-bar {
-            width: 300px;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
+.result-item {
+    padding: 15px;
+    margin: 10px;
+    background: transparent; /* Transparent background to match parent */
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border for results */
+    transition: transform 0.3s;
+}
 
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            border-radius: 4px;
-            background-color: #007bff;
-            color: white;
-            transition: background-color 0.3s;
-        }
+.result-item:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+}
 
-        button:hover {
-            background-color: #0056b3;
-        }
+.result-item div {
+    margin: 5px 0;
+    padding: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Light border for result items */
+}
 
-        #clear-button {
-            background-color: #6c757d;
-        }
+.result-item strong {
+    color: white; /* White text color */
+    margin-right: 5px;
+    min-width: 150px;
+    display: inline-block;
+}
 
-        #clear-button:hover {
-            background-color: #545b62;
-        }
+/* Footer Styles */
+footer {
+    background: linear-gradient(to bottom right, rgba(30, 32, 34, 1), rgba(23, 26, 29, 1)); /* Same gradient as header */
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid #dee2e6;
+}
 
-        #suggestions, #results {
-            width: 80%;
-            max-width: 800px;
-            margin-top: 10px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+.footer-content p {
+    margin: 0;
+    font-size: 0.9em;
+}
 
-        .suggestion {
-            padding: 12px;
-            cursor: pointer;
-            border-bottom: 1px solid #eee;
-        }
-      
+.footer-content a {
+    color: #ffffff; /* White text for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
 
-        .suggestion:hover {
-            background-color: #f8f9fa;
-        }
+.footer-content a:hover {
+    color: #e0e0e0; /* Light gray on hover */
+}
 
-        .result-item {
-            padding: 15px;
-            margin: 10px;
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            border: 1px solid #dee2e6;
-        }
+/* Error and Banner Styles */
+.error {
+    color: #dc3545;
+    padding: 10px;
+    text-align: center;
+}
 
-        .result-item div {
-            margin: 5px 0;
-            padding: 5px;
-            border-bottom: 1px solid #eee;
-        }
+.not-registered-banner {
+    background: linear-gradient(to right, #ffebee, #f8d7da); /* Light red gradient */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 20px;
+    border: 2px solid #dc3545;
+}
 
-        .result-item strong {
-            color: #495057;
-            margin-right: 5px;
-            min-width: 150px;
-            display: inline-block;
-        }
+.banner {
+    background: linear-gradient(to right, #ffebee, #f8d7da); /* Light red gradient */
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 20px 0;
+    border: 2px solid #dc3545; /* Red border */
+}
 
-        .error {
-            color: #dc3545;
-            padding: 10px;
-            text-align: center;
-        }
+.banner-text {
+    color: #dc3545; /* Red text */
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 5px; /* Add some space between the X and the text */
+}
 
-        /* Add these new styles here */
-        .not-registered-banner {
-            background-color: #ffebee;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            margin: 20px;
-            border: 2px solid #dc3545;
-        }
+.x-sign {
+    font-size: 24px; /* Size of the X mark */
+    color: #dc3545; /* Red color for the X mark */
+    cursor: pointer; /* Change cursor to pointer */
+    display: block; /* Make it a block element to stack above the text */
+    margin-bottom: 5px; /* Space between the X and the text */
+    font-weight: bold; /* Make the X bold */
+}
 
-        .banner-text {
-            color: #dc3545;
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 10px;
-        }
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+    .search-container {
+        flex-direction: column;
+        width: 90%;
+        gap: 15px;
+    }
 
-        .x-sign {
-            font-size: 48px;
-            color: #dc3545;
-            display: block;
-            margin-bottom: 10px;
-        }
-        @media screen and (max-width: 600px) {
-            .search-container {
-                flex-direction: column;
-                width: 90%;
-                gap: 15px;
-            }
+    #search-bar {
+        width: 100%;
+    }
 
-            #search-bar {
-                width: 100%;
-            }
+    .result-item {
+        margin: 10px 5px;
+    }
 
-            .result-item {
-                margin: 10px 5px;
-            }
+    #suggestions, #results {
+        width: 90%;
+    }
 
-            #suggestions, #results {
-                width: 90%;
-            }
-
-            .result-item strong {
-                display: block;
-                margin-bottom: 5px;
-            }
-        }
-
-        .footer-content a {
-            color: #007bff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-content a:hover {
-            color: #0056b3;
-            text-decoration: underline;
-        }
-
-        .banner {
-            background-color: #ffebee; /* Light red background */
-            padding: 10px;
-            border-radius: 8px;
-            text-align: center;
-            margin: 20px 0;
-            border: 2px solid #dc3545; /* Red border */
-        }
-        
-        .banner-text {
-            color: #dc3545; /* Red text */
-            font-size: 20px;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 5px; /* Add some space between the X and the text */
-        }
-        
-        .x-sign {
-            font-size: 24px; /* Size of the X mark */
-            color: #dc3545; /* Red color for the X mark */
-            cursor: pointer; /* Change cursor to pointer */
-            display: block; /* Make it a block element to stack above the text */
-            margin-bottom: 5px; /* Space between the X and the text */
-            font-weight: bold; /* Make the X bold */
-        }
-        
+    .result-item strong {
+        display: block;
+        margin-bottom: 5px;
+    }
+}
